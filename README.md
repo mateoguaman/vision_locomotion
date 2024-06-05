@@ -1,3 +1,21 @@
+### Instructions to run on real robot with Docker
+1. Clone this repo
+2. Make sure docker compose is installed by running ```docker compose version```
+3. Make sure you have nvidia drivers installed, which you can check by running nvidia-smi
+4. Install Nvidia Container Toolkit by following the Installation and Configuration steps in here: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+5. Configure your network. In Ubuntu, go to Network settings, click the + next to Wired, under the IPv4 tab, select Manual for IPv4 Method, in Address write 192.168.123.24, in Netmask write 255.255.255.0
+6. Run ```sudo ./mushr_noetic```
+7. Run the commands to run the policy
+```bash
+# On terminal 1, run the following to start the policy
+roslaunch agile_locomotion cms_ros.launch
+
+# On terminal 2, run the following to start the robot
+rostopic pub /agile_locomotion/walk std_msgs/Empty "{}" -1
+```
+9. If you haven't set up memlock stuff on robot yet as described below, do that
+---
+
 # Continual Learning for Locomotion with Cross-Modal Supervision
 
 This repo contains the code associated with the paper Learning Visual Locomotion with Cross-Modal Supervision.
