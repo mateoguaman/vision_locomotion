@@ -1,4 +1,4 @@
-export MUSHR_INSTALL_PATH=/home/rll/catkin_ws/src/mushr/mushr_utils/install
+export MUSHR_INSTALL_PATH=/home/rll/projects/catkin_ws/src/mushr/mushr_utils/install
 export MUSHR_COMPOSE_FILE=docker-compose.yml
 
 xhost +local:docker

@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   mushr_noetic:
-    image: rma3
+    image: egecaglar/a1_rma
     network_mode: "host"
     privileged: true
     devices:
